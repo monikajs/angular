@@ -1,0 +1,42 @@
+
+<form [formGroup]="registrationForm">
+  <mat-card fxLayout="column" fxLayoutGap="20px">
+    <div fxLayout="row" fxLayoutGap="10px">
+      <mat-form-field>
+        <mat-label>salutation</mat-label>
+        <mat-select formControlName="salutation">
+          <mat-option *ngFor="let salutation of salutations" [value]="salutation">
+            {{salutation}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div fxLayout="row" fxLayoutGap="10px">
+      <mat-form-field>
+        <input matInput formControlName="username" placeholder="username" required>
+      </mat-form-field>
+    </div>
+    <div fxLayout="row" fxLayoutGap="10px">
+       <mat-form-field>
+        <input matInput placeholder="Phone number" formControlName="number" type="number" required>
+      </mat-form-field> 
+    </div>
+    <div fxLayout="row" fxLayoutGap="10px">
+       <mat-form-field>
+        <input matInput type="email" formControlName="email" placeholder="enter email id" required>
+      </mat-form-field> 
+    </div>
+    <div fxLayout="row" fxLayoutGap="10px">
+       <mat-form-field>
+        <input matInput mat-textarea formControlName="address" placeholder="enter the full address" row="10" column="100" required>
+      </mat-form-field> 
+    </div>
+    <button mat-raised-button (click)="submitForm()">Submit</button>
+  </mat-card>
+</form>
+
+<!-- 
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+-->
