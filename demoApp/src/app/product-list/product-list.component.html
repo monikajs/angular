@@ -1,7 +1,5 @@
-<h2>Products</h2>
-
-<mat-card>
-<table mat-table [dataSource]="dataSource" class="mat-elevation-z8" fxLayout="column" fxLayoutGap="20px">
+<button mat-button [routerLink]="register-form">Add User</button>
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
   <ng-container matColumnDef="Salutation">
     <th mat-header-cell *matHeaderCellDef>Salutation</th>
     <td mat-cell *matCellDef="let element">{{element.salutation}}</td>
@@ -22,7 +20,10 @@
     <th mat-header-cell *matHeaderCellDef> Address </th>
     <td mat-cell *matCellDef="let element"> {{element.address}} </td>
   </ng-container>
+    <ng-container matColumnDef="action">
+    <th mat-header-cell *matHeaderCellDef>Action</th>
+    <td mat-cell *matCellDef="let element"><button mat-button (click)="openDialougue(element)">EDIT</button></td>
+  </ng-container>
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
   <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 </table>
-</mat-card>
